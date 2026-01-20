@@ -8,23 +8,23 @@ Projenin özelliklerini ve kullanıcı arayüzünü detaylı izlemek için:
 
 ---
 
-## � Ekran Görüntüleri
+## 📸 Ekran Görüntüleri
 
 <p align="center">
-  <img src="wwwroot/img/screenshots/01_anasayfa.png" width="45%" alt="Ana Sayfa" />
-  <img src="wwwroot/img/screenshots/02_ders_notlari.png" width="45%" alt="Ders Notları" />
+  <img src="01_anasayfa.png" width="45%" alt="Ana Sayfa" />
+  <img src="02_ders_notlari.png" width="45%" alt="Ders Notları" />
 </p>
 <p align="center">
-  <img src="wwwroot/img/screenshots/03_ikinci_el.png" width="45%" alt="İkinci El Pazarı" />
-  <img src="wwwroot/img/screenshots/04_ilan_ver.png" width="45%" alt="İlan Verme" />
+  <img src="03_ikinci_el.png" width="45%" alt="İkinci El Pazarı" />
+  <img src="04_ilan_ver.png" width="45%" alt="İlan Verme" />
 </p>
 <p align="center">
-  <img src="wwwroot/img/screenshots/05_profil.png" width="90%" alt="Kullanıcı Profili" />
+  <img src="05_profil.png" width="90%" alt="Kullanıcı Profili" />
 </p>
 
 ---
 
-## �🚀 Öne Çıkan Özellikler
+## 🚀 Öne Çıkan Özellikler
 
 ### 📚 Akademik ve Bilgi Paylaşımı
 *   **Ders Notları Sistemi:** Bölüm ve ders bazlı not paylaşımı. PDF ve görsel içerik desteği.
