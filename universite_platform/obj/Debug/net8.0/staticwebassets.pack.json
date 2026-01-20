@@ -1,0 +1,417 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\universite_platform.bundle.scp.css",
+      "PackagePath": "staticwebassets\\universite_platform.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\housing\\019cdc35-ff6b-448b-9b93-0f99c1d51ddc_apartman 4.webp",
+      "PackagePath": "staticwebassets\\uploads\\housing\\019cdc35-ff6b-448b-9b93-0f99c1d51ddc_apartman 4.webp"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\housing\\086ac502-3e63-44b8-aebd-0b75b5025fce_apartman 1.webp",
+      "PackagePath": "staticwebassets\\uploads\\housing\\086ac502-3e63-44b8-aebd-0b75b5025fce_apartman 1.webp"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\housing\\2946018b-85c4-4ff3-99d3-e9f3092963b1_daire 5.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\housing\\2946018b-85c4-4ff3-99d3-e9f3092963b1_daire 5.jpeg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\housing\\72e1f264-2212-4b41-9bf1-a295639685d9_daire 1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\housing\\72e1f264-2212-4b41-9bf1-a295639685d9_daire 1.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\housing\\b14b4f40-8f1b-4a3d-a62d-46c4929920be_daire4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\housing\\b14b4f40-8f1b-4a3d-a62d-46c4929920be_daire4.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\06cbcac0-b36d-4bf4-ad9c-f3521f22b391_bere.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\06cbcac0-b36d-4bf4-ad9c-f3521f22b391_bere.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\08eb8511-e02f-4bf9-9402-01a0018d7da7_çalışma masası2.webp",
+      "PackagePath": "staticwebassets\\uploads\\market\\08eb8511-e02f-4bf9-9402-01a0018d7da7_çalışma masası2.webp"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\2565771c-d4dd-4a23-8064-2aba0991f2b9_20250510_2109_Dijital Pazarlama Simülasyonu_simple_compose_01jtxp4nxvf59vssdafqae7p2a.png",
+      "PackagePath": "staticwebassets\\uploads\\market\\2565771c-d4dd-4a23-8064-2aba0991f2b9_20250510_2109_Dijital Pazarlama Simülasyonu_simple_compose_01jtxp4nxvf59vssdafqae7p2a.png"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\3865a8ae-1f8c-4848-98be-23bcb12a3c0c_ferdiciyiz01-20221002-0001.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\3865a8ae-1f8c-4848-98be-23bcb12a3c0c_ferdiciyiz01-20221002-0001.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\4512e230-9999-4b7f-9329-46cd171cbf5d_uygula_button_clean.png",
+      "PackagePath": "staticwebassets\\uploads\\market\\4512e230-9999-4b7f-9329-46cd171cbf5d_uygula_button_clean.png"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\4710b07f-d6ee-4948-b641-6701bef23a43_okuma kitabı1.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\market\\4710b07f-d6ee-4948-b641-6701bef23a43_okuma kitabı1.jpeg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\54b3f2de-a605-4793-b4b3-70dd0c45c4d2_kitap 1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\54b3f2de-a605-4793-b4b3-70dd0c45c4d2_kitap 1.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\57f1fc49-ebeb-425e-9988-e4f9a8112e09_ders kitabı 1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\57f1fc49-ebeb-425e-9988-e4f9a8112e09_ders kitabı 1.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\6041f732-869c-4f9a-b4ff-b34983cb694a_koltuk2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\6041f732-869c-4f9a-b4ff-b34983cb694a_koltuk2.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\625cd3e0-eacc-47ee-a934-645c271646fa_tel 2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\625cd3e0-eacc-47ee-a934-645c271646fa_tel 2.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\7591f719-5467-4744-a0d1-9040ea513f9a_tel 3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\7591f719-5467-4744-a0d1-9040ea513f9a_tel 3.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\90c80e29-bebc-42f1-bcd1-e7d227fa7108_çalışma masas.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\90c80e29-bebc-42f1-bcd1-e7d227fa7108_çalışma masas.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\9e7a1a39-a57c-402c-ac06-4cee4e2b1272_çalışma masas.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\9e7a1a39-a57c-402c-ac06-4cee4e2b1272_çalışma masas.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\bbd8163a-727b-4838-9ad8-31f8d882e836_koltuk1.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\market\\bbd8163a-727b-4838-9ad8-31f8d882e836_koltuk1.jpeg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\d04e15d6-b10c-490a-a06e-bc0eaaa671d1_ders kitabı 1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\d04e15d6-b10c-490a-a06e-bc0eaaa671d1_ders kitabı 1.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\market\\f3f0117a-262d-45c4-a53b-f523d50e6e58_image.jpg",
+      "PackagePath": "staticwebassets\\uploads\\market\\f3f0117a-262d-45c4-a53b-f523d50e6e58_image.jpg"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\047c8e9f-f1da-47d7-87d7-cb602b5ae342_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\047c8e9f-f1da-47d7-87d7-cb602b5ae342_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\1566ab19-9b43-45f0-8fe0-09ed4b983258_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\1566ab19-9b43-45f0-8fe0-09ed4b983258_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\159a48c0-3bbd-40b1-8f30-20715f40f4d0_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\159a48c0-3bbd-40b1-8f30-20715f40f4d0_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\50c55776-333d-41c8-8e0d-31c1fff3c1c8_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\50c55776-333d-41c8-8e0d-31c1fff3c1c8_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\62900266-79fa-4d6e-8ae8-11658ab05a70_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\62900266-79fa-4d6e-8ae8-11658ab05a70_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\844400a4-d9b3-4dc7-a9cd-630baf10ed65_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\844400a4-d9b3-4dc7-a9cd-630baf10ed65_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\8a63f27f-19ec-49fc-b8d1-d167ff0747ec_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\8a63f27f-19ec-49fc-b8d1-d167ff0747ec_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\8c8852ce-ad62-4747-a759-16a751c88935_sinav_calısma_plani (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\8c8852ce-ad62-4747-a759-16a751c88935_sinav_calısma_plani (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\a6dc7485-784e-4db9-a4b2-ba4378d883ed_apartman 1.webp",
+      "PackagePath": "staticwebassets\\uploads\\notes\\a6dc7485-784e-4db9-a4b2-ba4378d883ed_apartman 1.webp"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\aa8a502c-e14f-4b85-a72a-367e4b3c2a68_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\aa8a502c-e14f-4b85-a72a-367e4b3c2a68_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\ac1e7e08-9de3-44e5-9684-d058dd31b771_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\ac1e7e08-9de3-44e5-9684-d058dd31b771_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\b0815ebd-080a-495c-a5a7-da3bea65d1e1_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\b0815ebd-080a-495c-a5a7-da3bea65d1e1_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\b88df861-0166-483a-96d1-a317cf307275_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\b88df861-0166-483a-96d1-a317cf307275_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\d25e163f-1571-4550-b75e-8c973c089149_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\d25e163f-1571-4550-b75e-8c973c089149_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\d74532f5-c360-4d66-91f3-98f3712070d9_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\d74532f5-c360-4d66-91f3-98f3712070d9_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\effe4c4d-3a4c-48c8-9f70-5651c1fd43e9_sinav_calısma_plani.pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\effe4c4d-3a4c-48c8-9f70-5651c1fd43e9_sinav_calısma_plani.pdf"
+    },
+    {
+      "Id": "C:\\Proje denemeleri\\universite_platformu\\universite_platform\\wwwroot\\uploads\\notes\\fa2a3805-8fc8-4db4-83a6-220702b79d64_sinav_calısma_plani (1) (1).pdf",
+      "PackagePath": "staticwebassets\\uploads\\notes\\fa2a3805-8fc8-4db4-83a6-220702b79d64_sinav_calısma_plani (1) (1).pdf"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.universite_platform.props",
+      "PackagePath": "build\\universite_platform.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.universite_platform.props",
+      "PackagePath": "buildMultiTargeting\\universite_platform.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.universite_platform.props",
+      "PackagePath": "buildTransitive\\universite_platform.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.universite_platform.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

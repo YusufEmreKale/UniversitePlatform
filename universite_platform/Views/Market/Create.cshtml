@@ -1,0 +1,73 @@
+@model universite_platform.Models.ViewModels.MarketItemCreateViewModel
+
+@{
+    ViewData["Title"] = "İlan Ver";
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="glass-card">
+            <h2 class="mb-4" style="color: var(--primary-color);">📦 Yeni İkinci El İlanı</h2>
+            
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Title" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Description" class="control-label fw-bold mb-1"></label>
+                    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                         <label asp-for="Price" class="control-label fw-bold mb-1"></label>
+                        <div class="input-group">
+                            <span class="input-group-text">₺</span>
+                            <input asp-for="Price" class="form-control" type="number" step="0.01" />
+                        </div>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6 form-group mb-3">
+                        <label asp-for="Category" class="control-label fw-bold mb-1"></label>
+                        <select asp-for="Category" class="form-select">
+                            <option value="Kitap">Kitap</option>
+                            <option value="Elektronik">Elektronik</option>
+                            <option value="Ev Eşyası">Ev Eşyası</option>
+                            <option value="Giyim">Giyim</option>
+                            <option value="Diğer">Diğer</option>
+                        </select>
+                         <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="PhoneNumber" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="555..." />
+                    <small class="text-muted">Alıcılar size WhatsApp üzerinden ulaşacak.</small>
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label asp-for="Image" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="Image" class="form-control" type="file" accept="image/*" />
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">İlanı Yayınla</button>
+                    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

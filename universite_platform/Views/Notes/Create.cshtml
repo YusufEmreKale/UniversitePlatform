@@ -1,0 +1,63 @@
+@model universite_platform.Models.ViewModels.LectureNoteCreateViewModel
+
+@{
+    ViewData["Title"] = "Not Paylaş";
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="glass-card">
+            <h2 class="mb-4" style="color: var(--primary-color); font-weight: bold;">Not Paylaş</h2>
+            <p class="text-muted mb-4">Diğer öğrencilere yardımcı olmak için ders notlarını yükle.</p>
+            
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Title" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="Title" class="form-control" placeholder="Örn: Matematik 1 Vize Notları" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                        <label asp-for="CourseName" class="control-label fw-bold mb-1"></label>
+                        <input asp-for="CourseName" class="form-control" placeholder="Örn: Matematik 101" />
+                        <span asp-validation-for="CourseName" class="text-danger"></span>
+                    </div>
+                    
+                    <div class="col-md-6 form-group mb-3">
+                        <label asp-for="ExamType" class="control-label fw-bold mb-1"></label>
+                        <select asp-for="ExamType" class="form-select" asp-items="Html.GetEnumSelectList<universite_platform.Models.ExamType>()"></select>
+                        <span asp-validation-for="ExamType" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="File" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="File" type="file" class="form-control" />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                    <small class="text-muted">PDF, Word veya Görsel dosyaları yükleyebilirsiniz.</small>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label asp-for="Price" class="control-label fw-bold mb-1"></label>
+                    <div class="input-group">
+                        <span class="input-group-text">₺</span>
+                        <input asp-for="Price" class="form-control" placeholder="0.00 (Boş bırakırsanız ücretsiz olur)" />
+                    </div>
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Yükle ve Paylaş</button>
+                    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

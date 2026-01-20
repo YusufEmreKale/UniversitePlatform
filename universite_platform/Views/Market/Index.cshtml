@@ -1,0 +1,82 @@
+@model IEnumerable<universite_platform.Models.MarketItem>
+
+@{
+    ViewData["Title"] = "İkinci El Pazarı";
+}
+
+<div class="hero-section d-flex justify-content-between align-items-center">
+    <div>
+        <h1 class="display-5 hero-title">🛒 İkinci El Pazarı</h1>
+        <p class="hero-subtitle mb-0">Kampüsün en uygun fiyatlı eşyaları burada.</p>
+    </div>
+    @if (User.IsInRole("Student"))
+    {
+        <a asp-action="Create" class="btn btn-primary btn-lg shadow-lg position-relative" style="z-index: 2;">
+            <i class="bi bi-plus-lg"></i> İlan Ver
+        </a>
+    }
+</div>
+
+<div class="glass-card mb-4 p-4">
+    <form asp-action="Index" method="get" class="row g-3">
+        <div class="col-md-6">
+            <input type="text" name="searchString" class="form-control" placeholder="Ne arıyorsun?" value="@ViewData["CurrentFilter"]">
+        </div>
+        <div class="col-md-4">
+            <select name="category" class="form-select">
+                <option value="">Tüm Kategoriler</option>
+                <option value="Ev Eşyası">Ev Eşyası</option>
+                <option value="Elektronik">Elektronik</option>
+                <option value="Giyim">Giyim</option>
+                <option value="Kitap/Kırtasiye">Kitap/Kırtasiye</option>
+                <option value="Diğer">Diğer</option>
+            </select>
+        </div>
+        <div class="col-md-2 d-grid">
+            <button type="submit" class="btn btn-outline-primary">Filtrele</button>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="glass-card h-100 p-0 overflow-hidden position-relative hover-lift">
+                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                {
+                    <img src="~/uploads/market/@item.ImageUrl" class="card-img-top" alt="@item.Title" style="height: 200px; object-fit: cover;">
+                }
+                else
+                {
+                    <div class="bg-light d-flex align-items-center justify-content-center" style="height: 200px;">
+                        <i class="bi bi-image text-muted" style="font-size: 3rem;"></i>
+                    </div>
+                }
+                
+                <div class="card-body p-3">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="badge bg-secondary">@item.Category</span>
+                        <span class="fw-bold text-success">@item.Price.ToString("C")</span>
+                    </div>
+                    <h5 class="card-title fw-bold text-truncate" title="@item.Title">@item.Title</h5>
+                    <p class="card-text text-muted small text-truncate">@item.Description</p>
+                </div>
+                <div class="card-footer bg-transparent border-0 p-3 pt-0">
+                    <div class="d-grid">
+                         <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm">İncele</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .hover-lift {
+        transition: transform 0.3s ease;
+    }
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+</style>

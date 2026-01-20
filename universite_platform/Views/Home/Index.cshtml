@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="hero-section text-center mb-5 py-5" style="background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%); color: white; border: none;">
+    <h1 class="display-3 fw-bold mb-3 animate-slide-in">Kampüsün Dijital Kalbi</h1>
+    <p class="lead mb-5 animate-slide-in" style="opacity: 0.9;">Ders notlarından ikinci el pazarına, ev arkadaşından duyurulara kadar ihtiyacın olan her şey burada.</p>
+    
+    <div class="d-flex justify-content-center gap-3 animate-slide-in">
+        <a asp-controller="Notes" asp-action="Index" class="btn btn-light btn-lg rounded-pill px-5 shadow-lg fw-bold text-primary hover-scale">
+            <i class="bi bi-journal-text me-2"></i> Not Bul
+        </a>
+        <a asp-controller="Market" asp-action="Index" class="btn btn-outline-light btn-lg rounded-pill px-5 shadow-lg fw-bold hover-scale">
+            <i class="bi bi-shop me-2"></i> Pazar Yeri
+        </a>
+    </div>
+</div>
+
+<div class="row g-4 py-5">
+    <div class="col-md-3">
+        <div class="glass-card h-100 text-center p-4 hover-card" onclick="location.href='@Url.Action("Index", "Notes")'" style="cursor: pointer;">
+            <div class="icon-box bg-primary text-white mb-3">
+                <i class="bi bi-journal-bookmark-fill fs-3"></i>
+            </div>
+            <h3 class="h5 fw-bold">Ders Notları</h3>
+            <p class="text-muted small">Ders notlarını paylaş, eksiklerini tamamla ve gelir elde et.</p>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="glass-card h-100 text-center p-4 hover-card" onclick="location.href='@Url.Action("Index", "Market")'" style="cursor: pointer;">
+            <div class="icon-box bg-success text-white mb-3">
+                <i class="bi bi-cart-fill fs-3"></i>
+            </div>
+            <h3 class="h5 fw-bold">İkinci El Pazar</h3>
+            <p class="text-muted small">Kullanmadığın eşyaları sat veya uygun fiyata ihtiyaçlarını karşıla.</p>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="glass-card h-100 text-center p-4 hover-card" onclick="location.href='@Url.Action("Index", "Housing")'" style="cursor: pointer;">
+            <div class="icon-box bg-warning text-white mb-3">
+                <i class="bi bi-house-door-fill fs-3"></i>
+            </div>
+            <h3 class="h5 fw-bold">Barınma & Ev</h3>
+            <p class="text-muted small">Kiralık ev bul veya kendine uygun ev arkadaşını seç.</p>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="glass-card h-100 text-center p-4 hover-card" onclick="location.href='@Url.Action("Index", "Forum")'" style="cursor: pointer;">
+            <div class="icon-box bg-info text-white mb-3">
+                <i class="bi bi-chat-square-text-fill fs-3"></i>
+            </div>
+            <h3 class="h5 fw-bold">Forum & Sohbet</h3>
+            <p class="text-muted small">Kampüs gündemini takip et, sorularını sor ve sosyalleş.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .icon-box {
+        width: 60px; 
+        height: 60px; 
+        border-radius: 50%; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        margin: 0 auto;
+    }
+    .hover-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+    }
+    .hover-scale {
+        transition: transform 0.2s;
+    }
+    .hover-scale:hover {
+        transform: scale(1.05);
+    }
+</style>

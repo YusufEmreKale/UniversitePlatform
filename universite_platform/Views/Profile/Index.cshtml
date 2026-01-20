@@ -1,0 +1,398 @@
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IHtmlLocalizer<SharedResource> Localizer
+@model universite_platform.Models.ViewModels.ProfileViewModel
+
+@{
+    ViewData["Title"] = "Profilim";
+}
+
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-md-12 text-center">
+            <div class="avatar-circle bg-primary text-white mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center shadow" style="width: 100px; height: 100px;">
+                <span class="display-4 fw-bold">@Model.User.FullName.Substring(0, 1)</span>
+            </div>
+            <h2 class="fw-bold">@Model.User.FullName</h2>
+            <p class="text-muted">@Model.User.StudentNumber</p>
+            
+            <div class="d-flex justify-content-center gap-4 mt-4">
+                <div class="text-center">
+                    <h3 class="fw-bold text-success">@Model.TotalEarnings.ToString("C2")</h3>
+                    <small class="text-muted">Toplam Kazanç</small>
+                </div>
+                <div class="text-center">
+                    <h3 class="fw-bold text-primary">@Model.TotalDownloads</h3>
+                    <small class="text-muted">İndirilme Sayısı</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav nav-pills mb-4 justify-content-center" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active rounded-pill px-4" id="pills-notif-tab" data-bs-toggle="pill" data-bs-target="#pills-notif" type="button" role="tab">@Localizer["Notifications"] (@Model.Notifications.Count(n => !n.IsRead))</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill px-4" id="pills-purchased-tab" data-bs-toggle="pill" data-bs-target="#pills-purchased" type="button" role="tab">Satın Aldıklarım</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill px-4" id="pills-market-tab" data-bs-toggle="pill" data-bs-target="#pills-market" type="button" role="tab">@Localizer["MyProducts"]</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill px-4" id="pills-housing-tab" data-bs-toggle="pill" data-bs-target="#pills-housing" type="button" role="tab">@Localizer["MyAds"]</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill px-4" id="pills-comments-tab" data-bs-toggle="pill" data-bs-target="#pills-comments" type="button" role="tab">@Localizer["MyComments"]</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link rounded-pill px-4" id="pills-settings-tab" data-bs-toggle="pill" data-bs-target="#pills-settings" type="button" role="tab"><i class="bi bi-gear-fill"></i> @Localizer["Settings"]</button>
+        </li>
+    </ul>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["ErrorMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="tab-content" id="pills-tabContent">
+        <!-- Notifications Tab -->
+        <div class="tab-pane fade show active" id="pills-notif" role="tabpanel">
+            <div class="glass-card">
+                @if (Model.Notifications.Any())
+                {
+                    <ul class="list-group list-group-flush bg-transparent">
+                        @foreach (var item in Model.Notifications)
+                        {
+                            <li class="list-group-item bg-transparent d-flex justify-content-between align-items-center mb-2 @(item.IsRead ? "" : "fw-bold border-start border-4 border-primary")">
+                                <div>
+                                    <h5>@item.Title</h5>
+                                    <p class="mb-0">@item.Message</p>
+                                    <small class="text-muted">@item.CreatedAt.ToString("g")</small>
+                                </div>
+                                @if (!item.IsRead)
+                                {
+                                     <button class="btn btn-sm btn-outline-secondary" onclick="markRead(@item.Id, this)">Okundu İşaretle</button>
+                                }
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-center text-muted p-5">Henüz bildirim yok.</p>
+                }
+            </div>
+        </div>
+
+        <!-- Purchased Notes Tab -->
+        <div class="tab-pane fade" id="pills-purchased" role="tabpanel">
+            <div class="row">
+                @if (Model.PurchasedNotes.Any())
+                {
+                    @foreach (var item in Model.PurchasedNotes)
+                    {
+                        <div class="col-md-6 mb-3">
+                            <div class="card border-0 shadow-sm p-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <h5 class="mb-1">@item.LectureNote.Title</h5>
+                                        <small class="text-muted">Satıcı: @item.LectureNote.Owner?.FullName</small>
+                                    </div>
+                                    <a asp-controller="Notes" asp-action="Download" asp-route-id="@item.LectureNoteId" class="btn btn-primary btn-sm rounded-pill"><i class="bi bi-download"></i> İndir</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12 text-center text-muted p-5">Satın aldığınız veya indirdiğiniz not yok.</div>
+                }
+            </div>
+        </div>
+
+        <!-- Market Items Tab -->
+        <div class="tab-pane fade" id="pills-market" role="tabpanel">
+            <div class="glass-card">
+                <h4 class="mb-3">Satıştaki Eşyalarım</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Başlık</th>
+                                <th>Fiyat</th>
+                                <th>Görüntülenme</th>
+                                <th>Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (var item in Model.MyMarketItems)
+                            {
+                                <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.Price.ToString("C2")</td>
+                                    <td>@item.ViewCount</td>
+                                    <td>@item.CreatedAt.ToString("d")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Housing Ads Tab -->
+        <div class="tab-pane fade" id="pills-housing" role="tabpanel">
+            <div class="glass-card">
+                <h4 class="mb-3">Verdiğim İlanlar</h4>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Başlık</th>
+                                <th>Kira</th>
+                                <th>Görüntülenme</th>
+                                <th>Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (var item in Model.MyHousingAds)
+                            {
+                                <tr>
+                                    <td>@item.Title</td>
+                                    <td>@item.Rent.ToString("C2")</td>
+                                    <td>@item.ViewCount</td>
+                                    <td>@item.CreatedAt.ToString("d")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments Tab -->
+        <div class="tab-pane fade" id="pills-comments" role="tabpanel">
+             <div class="glass-card">
+                 @if (Model.MyComments.Any())
+                {
+                     <ul class="list-group list-group-flush bg-transparent">
+                        @foreach (var comment in Model.MyComments)
+                        {
+                            <li class="list-group-item bg-transparent">
+                                <p class="mb-1 fw-bold">"@comment.LectureNote?.Title" notuna yazdın:</p>
+                                <p class="text-muted mb-0">"@comment.Content"</p>
+                                <small class="text-muted">@comment.CreatedAt.ToString("g")</small>
+                            </li>
+                        }
+                    </ul>
+                }
+                 else
+                {
+                    <p class="text-center text-muted p-5">Henüz yorum yapmadınız.</p>
+                }
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div class="tab-pane fade" id="pills-settings" role="tabpanel">
+             <div class="glass-card">
+                 <div class="row">
+                     <!-- Profile Info -->
+                     <div class="col-md-6 mb-4">
+                         <div class="p-4 border rounded h-100 bg-white shadow-sm" style="transition: all 0.3s;">
+                             <h4 class="mb-4 text-primary fw-bold"><i class="bi bi-person-lines-fill"></i> Profil Bilgileri</h4>
+                             <form asp-action="UpdateInfo" method="post">
+                                 <div class="mb-3">
+                                     <label class="form-label fw-bold">Ad Soyad</label>
+                                     <input type="text" name="fullName" class="form-control" value="@Model.User.FullName" required>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label class="form-label fw-bold">Telefon Numarası</label>
+                                     <input type="tel" name="phoneNumber" class="form-control" value="@Model.User.PhoneNumber" placeholder="0555 555 55 55">
+                                 </div>
+                                 <button type="submit" class="btn btn-primary w-100 mt-2">Bilgileri Güncelle</button>
+                             </form>
+                         </div>
+                     </div>
+
+                     <!-- Change Password -->
+                     <div class="col-md-6 mb-4">
+                         <div class="p-4 border rounded h-100 bg-white shadow-sm" style="transition: all 0.3s;">
+                             <h4 class="mb-4 text-danger fw-bold"><i class="bi bi-shield-lock-fill"></i> Şifre Değiştir</h4>
+                             <form asp-action="ChangePassword" method="post">
+                                 <div class="mb-3">
+                                     <label class="form-label fw-bold">Mevcut Şifre</label>
+                                     <input type="password" name="currentPassword" class="form-control" required>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label class="form-label fw-bold">Yeni Şifre</label>
+                                     <input type="password" name="newPassword" class="form-control" required>
+                                 </div>
+                                 <div class="mb-3">
+                                     <label class="form-label fw-bold">Yeni Şifre (Tekrar)</label>
+                                     <input type="password" name="confirmPassword" class="form-control" required>
+                                 </div>
+                                 <button type="submit" class="btn btn-outline-danger w-100 mt-2">Şifreyi Güncelle</button>
+                             </form>
+                         </div>
+                     </div>
+
+                     <!-- App Preferences (Dark Mode, Lang) -->
+                     <div class="col-md-6 mb-4">
+                         <div class="p-4 border rounded h-100 bg-white shadow-sm">
+                             <h4 class="mb-4 text-info fw-bold"><i class="bi bi-sliders"></i> Uygulama Ayarları</h4>
+                             
+                             <div class="d-flex justify-content-between align-items-center mb-4">
+                                 <div>
+                                     <h6 class="fw-bold mb-0">Karanlık Mod</h6>
+                                     <small class="text-muted">Göz yormayan koyu tema</small>
+                                 </div>
+                                 <div class="form-check form-switch">
+                                     <input class="form-check-input" type="checkbox" id="darkModeSwitch" style="width: 3em; height: 1.5em; cursor: pointer;">
+                                 </div>
+                             </div>
+
+                             <div class="mb-3">
+                                 <label class="form-label fw-bold">Uygulama Dili</label>
+                                 <select class="form-select" id="langSelect">
+                                     <option value="tr">🇹🇷 Türkçe</option>
+                                     <option value="en">🇬🇧 English (Beta)</option>
+                                     <option value="de">🇩🇪 Deutsch (Beta)</option>
+                                 </select>
+                             </div>
+                         </div>
+                     </div>
+
+                      <!-- Notifications & About -->
+                     <div class="col-md-6 mb-4">
+                         <div class="p-4 border rounded h-100 bg-white shadow-sm">
+                             <h4 class="mb-4 text-warning fw-bold"><i class="bi bi-bell-fill"></i> Diğer</h4>
+                             
+                             <div class="mb-4">
+                                 <h6 class="fw-bold mb-2">Bildirim Tercihleri</h6>
+                                 <div class="form-check mb-2">
+                                     <input class="form-check-input" type="checkbox" id="emailNotif" checked>
+                                     <label class="form-check-label" for="emailNotif">E-posta Bildirimleri</label>
+                                 </div>
+                                 <div class="form-check">
+                                     <input class="form-check-input" type="checkbox" id="smsNotif">
+                                     <label class="form-check-label" for="smsNotif">SMS Bildirimleri</label>
+                                 </div>
+                             </div>
+
+                             <hr />
+
+                             <div>
+                                 <h6 class="fw-bold mb-2">Hakkında</h6>
+                                 <p class="text-muted small mb-1">Kampüs Platformu v1.2.0</p>
+                                 <p class="text-muted small mb-0">&copy; 2026 Tüm Hakları Saklıdır.</p>
+                                 <a href="#" class="small text-decoration-none">Kullanım Koşulları</a> &bull; <a href="#" class="small text-decoration-none">Gizlilik Politikası</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function markRead(id, btn) {
+        fetch('/Profile/MarkNotificationRead/' + id, { method: 'POST' })
+            .then(r => {
+                if(r.ok) {
+                    btn.closest('li').classList.remove('fw-bold', 'border-start', 'border-4', 'border-primary');
+                    btn.remove();
+                }
+            });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // Dark Mode Logic
+        const darkModeSwitch = document.getElementById('darkModeSwitch');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            darkModeSwitch.checked = true;
+        }
+
+        darkModeSwitch.addEventListener('change', function(e) {
+            if (e.target.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Language Logic
+        const langSelect = document.getElementById('langSelect');
+        // Read cookie
+         const getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        
+        const currentLang = getCookie('.AspNetCore.Culture');
+        if(currentLang) {
+             if(currentLang.includes('tr')) langSelect.value = 'tr';
+             else if(currentLang.includes('en')) langSelect.value = 'en';
+             else if(currentLang.includes('de')) langSelect.value = 'de';
+        }
+
+        langSelect.addEventListener('change', function() {
+            const selectedLang = this.value;
+            let culture = '';
+            if(selectedLang === 'tr') culture = 'c=tr-TR|uic=tr-TR';
+            if(selectedLang === 'en') culture = 'c=en-US|uic=en-US';
+            if(selectedLang === 'de') culture = 'c=de-DE|uic=de-DE';
+
+            document.cookie = `.AspNetCore.Culture=${culture}; path=/; max-age=31536000`; // 1 year
+            window.location.reload();
+        });
+    });
+</script>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const tabParam = urlParams.get('tab');
+            
+            if (tabParam) {
+                let tabId = '';
+                switch(tabParam) {
+                    case 'notifications': tabId = '#pills-notif-tab'; break;
+                    case 'purchased': tabId = '#pills-purchased-tab'; break;
+                    case 'market': tabId = '#pills-market-tab'; break;
+                    case 'housing': tabId = '#pills-housing-tab'; break;
+                    case 'comments': tabId = '#pills-comments-tab'; break;
+                    case 'settings': tabId = '#pills-settings-tab'; break;
+                }
+                
+                if (tabId) {
+                    const tabTrigger = document.querySelector(tabId);
+                    if (tabTrigger) {
+                        const tab = new bootstrap.Tab(tabTrigger);
+                        tab.show();
+                    }
+                }
+            }
+        });
+    </script>
+}

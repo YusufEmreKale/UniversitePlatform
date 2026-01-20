@@ -1,0 +1,164 @@
+@model universite_platform.Models.LectureNote
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
+@{
+    ViewData["Title"] = Model.Title;
+    var user = await UserManager.GetUserAsync(User);
+    var userId = user?.Id;
+    var isLiked = Model.Likes.Any(l => l.UserId == userId);
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="glass-card mb-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <span class="badge bg-info text-dark fs-6">@Model.CourseName</span>
+                    <small class="text-muted">@Model.UploadedAt.ToString("dd MMM yyyy")</small>
+                </div>
+
+                <h1 class="fw-bold mb-3">@Model.Title</h1>
+                <div class="d-flex align-items-center mb-4">
+                    <span class="badge bg-secondary me-2">@Model.ExamType</span>
+                    @if (Model.IsPaid)
+                    {
+                        <span class="badge bg-success fs-5">@Model.Price?.ToString("C2")</span>
+                    }
+                    else
+                    {
+                         <span class="badge bg-primary fs-5">Ücretsiz</span>
+                    }
+                </div>
+
+                <div class="d-flex align-items-center mb-4 p-3 bg-light rounded">
+                    <div class="avatar-circle bg-warning text-dark me-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-person-fill fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted d-block">Yükleyen</small>
+                        <span class="fw-bold">@Model.Owner?.FullName</span>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 mb-4">
+                    @if (ViewBag.IsOwner)
+                    {
+                        <div class="alert alert-warning text-center">
+                            <i class="bi bi-info-circle"></i> Bu notun sahibisiniz. (İndirme engellendi)
+                        </div>
+                    }
+                    else
+                    {
+                        @if (Model.IsPaid)
+                        {
+                            @if (ViewBag.HasPurchased)
+                            {
+                                <div class="alert alert-success text-center mb-2">
+                                    <i class="bi bi-check-circle"></i> Bu notu daha önce satın aldınız.
+                                </div>
+                                <a asp-action="ViewFile" asp-route-id="@Model.Id" target="_blank" class="btn btn-success btn-lg shadow-sm">
+                                    <i class="bi bi-eye"></i> Notu Görüntüle
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-action="Download" asp-route-id="@Model.Id" class="btn btn-primary btn-lg shadow-sm">
+                                    <i class="bi bi-cart"></i> Satın Al / İndir
+                                </a>
+                            }
+                        }
+                        else
+                        {
+                             <a asp-action="ViewFile" asp-route-id="@Model.Id" target="_blank" class="btn btn-primary btn-lg shadow-sm">
+                                <i class="bi bi-eye"></i> Notu Görüntüle / İndir
+                            </a>
+                        }
+                    }
+                </div>
+
+                <div class="d-flex justify-content-between text-muted border-top pt-3">
+                    <span><i class="bi bi-download"></i> @Model.DownloadCount İndirme</span>
+                    <span><i class="bi bi-heart-fill text-danger"></i> @Model.Likes.Count Beğeni</span>
+                    <span><i class="bi bi-chat-dots-fill text-info"></i> @Model.Comments.Count Yorum</span>
+                </div>
+
+                 <form asp-action="Like" asp-route-id="@Model.Id" method="post" class="mt-3">
+                    <button type="submit" class="btn @(isLiked ? "btn-danger" : "btn-outline-danger") btn-sm">
+                        <i class="bi bi-heart"></i> @(isLiked ? "Beğendin" : "Beğen")
+                    </button>
+                </form>
+
+                 @if (User.IsInRole("Admin"))
+                {
+                    <button type="button" class="btn btn-outline-danger w-100 mt-2" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                        Notu Sil (Admin)
+                    </button>
+                }
+            </div>
+
+            <!-- Comments Section -->
+            <div class="glass-card">
+                <h4 class="mb-4">Yorumlar</h4>
+                
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form asp-action="AddComment" asp-route-id="@Model.Id" method="post" class="mb-4">
+                        <div class="input-group">
+                            <input name="content" class="form-control" placeholder="Yorum yaz..." required />
+                            <button class="btn btn-primary" type="submit">Gönder</button>
+                        </div>
+                    </form>
+                }
+
+                @if (Model.Comments.Any())
+                {
+                    <ul class="list-unstyled">
+                        @foreach (var comment in Model.Comments.OrderByDescending(c => c.CreatedAt))
+                        {
+                            <li class="mb-3 pb-3 border-bottom">
+                                <div class="d-flex justify-content-between">
+                                    <strong class="text-primary">@comment.User?.FullName</strong>
+                                    <small class="text-muted">@comment.CreatedAt.ToString("g")</small>
+                                </div>
+                                <p class="mb-0">@comment.Content</p>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">Henüz yorum yapılmamış.</p>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Notu Sil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Silme Gerekçesi</label>
+                            <textarea name="reason" class="form-control" rows="3" required placeholder="Lütfen bir gerekçe belirtin..."></textarea>
+                        </div>
+                        <p class="text-danger small mb-0">Bu işlem geri alınamaz ve not sahibine bildirim gönderilecektir.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                        <button type="submit" class="btn btn-danger">Evet, Sil</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

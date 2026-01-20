@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Home" xml:space="preserve">
+    <value>Ana Sayfa</value>
+  </data>
+  <data name="LectureNotes" xml:space="preserve">
+    <value>Ders Notları</value>
+  </data>
+  <data name="Market" xml:space="preserve">
+    <value>İkinci El</value>
+  </data>
+  <data name="Housing" xml:space="preserve">
+    <value>Ev/Yurt</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Giriş Yap</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Kayıt Ol</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profilim</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Çıkış Yap</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Bildirimler</value>
+  </data>
+  <data name="MyProducts" xml:space="preserve">
+    <value>Satıştaki Eşyalarım</value>
+  </data>
+  <data name="MyAds" xml:space="preserve">
+    <value>Verdiğim İlanlar</value>
+  </data>
+  <data name="MyComments" xml:space="preserve">
+    <value>Yorumlarım</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Ayarlar</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Merhaba</value>
+  </data>
+  <data name="Forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+</root>

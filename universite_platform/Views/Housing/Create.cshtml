@@ -1,0 +1,109 @@
+@model universite_platform.Models.ViewModels.HousingAdCreateViewModel
+
+@{
+    ViewData["Title"] = "İlan Ver";
+}
+
+<div class="container d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="glass-card">
+            <h2 class="mb-4" style="color: var(--primary-color);">🏠 Yeni Barınma İlanı</h2>
+            
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                
+                <div class="form-group mb-3">
+                    <label asp-for="Title" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="Title" class="form-control" />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Description" class="control-label fw-bold mb-1"></label>
+                    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                 <div class="form-group mb-3">
+                    <label asp-for="Location" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="Location" class="form-control" placeholder="Mahalle, Sokak vb." />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                         <label asp-for="Rent" class="control-label fw-bold mb-1" id="rentLabel">Kira Ücreti</label>
+                        <div class="input-group">
+                            <span class="input-group-text">₺</span>
+                            <input asp-for="Rent" class="form-control" type="number" step="0.01" />
+                        </div>
+                        <span asp-validation-for="Rent" class="text-danger"></span>
+                    </div>
+                     <div class="col-md-6 form-group mb-3">
+                        <label asp-for="AdType" class="control-label fw-bold mb-1"></label>
+                        <select asp-for="AdType" class="form-select" id="adTypeSelect" asp-items="Html.GetEnumSelectList<HousingAdType>()"></select>
+                         <span asp-validation-for="AdType" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Image Upload (Initially Hidden) -->
+                <div class="form-group mb-3" id="imageUploadDiv" style="display:none;">
+                    <label asp-for="Image" class="control-label fw-bold mb-1">Evin Görselleri (Opsiyonel)</label>
+                    <input asp-for="Image" type="file" class="form-control" accept="image/*" />
+                    <small class="text-muted">Evinizden fotoğraflar yükleyerek şansınızı artırın.</small>
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="PhoneNumber" class="control-label fw-bold mb-1"></label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="555..." />
+                     <small class="text-muted">Alıcılar size WhatsApp üzerinden ulaşacak.</small>
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">İlanı Yayınla</button>
+                    <a asp-action="Index" class="btn btn-secondary">İptal</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const adTypeSelect = document.getElementById('adTypeSelect');
+            const imageUploadDiv = document.getElementById('imageUploadDiv');
+            const rentLabel = document.getElementById('rentLabel');
+
+            function updateUI() {
+                const selectedValue = parseInt(adTypeSelect.value);
+                
+                // HousingAdType: KiralikEv=0, EvArkadasiAriyorum=1, KalacakYerAriyorum=2
+                
+                // Show Image Upload for "Kiralik Ev" (0) and "Ev Arkadaşı Arıyorum" (1)
+                // Hide for "Kalacak Yer Arıyorum" (2) ... wait, user logic:
+                // User: "Eğer ilan türü ev arkadaşı arıyorum ise görsel yükleme kısmı açılacak."
+                // User: "Adam kendi evinin fotolarını yükleyecek." -> So yes, 0 and 1 should have photos.
+                // User: "Eğer ilan türü ev arıyorum ise... Fiyat Bütçe olacak" -> 2 should hide photos.
+
+                if (selectedValue === 0 || selectedValue === 1) {
+                    imageUploadDiv.style.display = "block";
+                } else {
+                    imageUploadDiv.style.display = "none";
+                }
+
+                if (selectedValue === 2) {
+                    rentLabel.innerText = "Bütçe Aralığı (Max)";
+                } else {
+                    rentLabel.innerText = "Kira Ücreti";
+                }
+            }
+
+            adTypeSelect.addEventListener('change', updateUI);
+            updateUI(); // Run on load
+        });
+    </script>
+}

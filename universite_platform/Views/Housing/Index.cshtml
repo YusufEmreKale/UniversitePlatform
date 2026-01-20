@@ -1,0 +1,96 @@
+@model IEnumerable<universite_platform.Models.HousingAd>
+
+@{
+    ViewData["Title"] = "Barınma & Ev Arkadaşı";
+}
+
+<div class="hero-section d-flex justify-content-between align-items-center">
+    <div>
+        <h1 class="display-5 hero-title">🏠 Barınma & Ev Arkadaşı</h1>
+        <p class="hero-subtitle mb-0">Kiralık daireler, yurtlar ve ev arkadaşı ilanları.</p>
+    </div>
+    @if (User.IsInRole("Student"))
+    {
+        <a asp-action="Create" class="btn btn-primary btn-lg shadow-lg position-relative" style="z-index: 2;">
+            <i class="bi bi-plus-lg"></i> İlan Ekle
+        </a>
+    }
+</div>
+
+<div class="glass-card mb-4 p-4">
+    <form asp-action="Index" method="get" class="row g-3">
+        <div class="col-md-6">
+            <input type="text" name="searchString" class="form-control" placeholder="Semt, konum veya başlık ara..." value="@ViewData["CurrentFilter"]">
+        </div>
+        <div class="col-md-4">
+            <select name="adType" class="form-select" asp-items="Html.GetEnumSelectList<universite_platform.Models.HousingAdType>()">
+                <option value="">Tüm İlan Türleri</option>
+            </select>
+        </div>
+        <div class="col-md-2 d-grid">
+            <button type="submit" class="btn btn-outline-primary">Filtrele</button>
+        </div>
+    </form>
+</div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-6 mb-4">
+            <div class="glass-card h-100 hover-lift position-relative" style="overflow: hidden; padding: 0;">
+                <div class="card-img-top position-relative" style="height: 200px; overflow: hidden;">
+                     @if (!string.IsNullOrEmpty(item.ImageUrl))
+                    {
+                        <img src="@item.ImageUrl" class="w-100 h-100" style="object-fit: cover;" alt="@item.Title">
+                    }
+                    else
+                    {
+                        <div class="w-100 h-100 bg-secondary d-flex align-items-center justify-content-center text-white">
+                            <i class="bi bi-house-door fs-1 opacity-50"></i>
+                        </div>
+                    }
+                    <div class="position-absolute top-0 end-0 p-3">
+                         <span class="badge @(item.AdType == universite_platform.Models.HousingAdType.KiralikEv ? "bg-primary" : (item.AdType == universite_platform.Models.HousingAdType.EvArkadasiAriyorum ? "bg-warning text-dark" : "bg-info text-dark"))">
+                            @Html.DisplayFor(modelItem => item.AdType)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="p-4 d-flex flex-column" style="height: calc(100% - 200px);">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <small class="text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> @item.Location</small>
+                        <span class="fw-bold fs-5 text-success">
+                            @(item.AdType == universite_platform.Models.HousingAdType.KalacakYerAriyorum ? "Bütçe:" : "Kira:") 
+                            @item.Rent.ToString("N0") ₺
+                        </span>
+                    </div>
+                
+                    <h4 class="card-title fw-bold mb-2 text-truncate" title="@item.Title">@item.Title</h4>
+                
+                    <p class="card-text text-muted mb-4" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                        @item.Description
+                    </p>
+                
+                    <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top w-100">
+                        <div class="d-flex align-items-center">
+                                <div class="avatar-circle bg-light text-primary me-2 rounded-circle d-flex align-items-center justify-content-center" style="width: 32px; height: 32px;">
+                                <i class="bi bi-person-fill"></i>
+                            </div>
+                            <small class="fw-bold text-truncate" style="max-width: 120px;">@item.Owner?.FullName</small>
+                        </div>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-primary btn-sm stretched-link">Detaylar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .hover-lift {
+        transition: transform 0.3s ease;
+    }
+    .hover-lift:hover {
+        transform: translateY(-5px);
+    }
+</style>

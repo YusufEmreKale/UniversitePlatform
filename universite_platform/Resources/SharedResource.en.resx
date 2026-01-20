@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="LectureNotes" xml:space="preserve">
+    <value>Lecture Notes</value>
+  </data>
+  <data name="Market" xml:space="preserve">
+    <value>Marketplace</value>
+  </data>
+  <data name="Housing" xml:space="preserve">
+    <value>Accomodation</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Is Logout</value>
+  </data>
+  <data name="Notifications" xml:space="preserve">
+    <value>Notifications</value>
+  </data>
+  <data name="MyProducts" xml:space="preserve">
+    <value>My Products</value>
+  </data>
+  <data name="MyAds" xml:space="preserve">
+    <value>My Ads</value>
+  </data>
+  <data name="MyComments" xml:space="preserve">
+    <value>My Comments</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Forum" xml:space="preserve">
+    <value>Forum</value>
+  </data>
+</root>

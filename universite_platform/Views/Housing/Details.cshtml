@@ -1,0 +1,90 @@
+@model universite_platform.Models.HousingAd
+
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="glass-card mb-4">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <span class="badge @(Model.AdType == HousingAdType.KiralikEv ? "bg-success" : "bg-warning text-dark") fs-6">
+                        @Html.DisplayFor(model => model.AdType)
+                    </span>
+                    <small class="text-muted">@Model.CreatedAt.ToString("dd MMM yyyy")</small>
+                </div>
+
+                 <h1 class="fw-bold mb-2">@Model.Title</h1>
+                 <div class="mb-4 text-muted"><i class="bi bi-geo-alt-fill text-danger"></i> @Model.Location</div>
+                 
+                 <div class="p-3 bg-light rounded mb-4 text-center">
+                     <small class="text-muted d-block text-uppercase fw-bold">Kira / Bütçe</small>
+                     <span class="display-6 fw-bold text-success">@Model.Rent.ToString("C2")</span>
+                 </div>
+
+                <h5 class="fw-bold">Detaylar</h5>
+                <p class="mb-4 text-muted" style="white-space: pre-wrap;">@Model.Description</p>
+
+                <div class="d-flex align-items-center mb-4 p-3 border rounded">
+                    <div class="avatar-circle bg-info text-white me-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                        <i class="bi bi-person-fill fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted d-block">İlan Sahibi</small>
+                        <span class="fw-bold">@Model.Owner?.FullName</span>
+                    </div>
+                </div>
+
+                 <div class="d-flex justify-content-between align-items-center mb-4">
+                     <span class="text-muted"><i class="bi bi-eye"></i> @Model.ViewCount Görüntülenme</span>
+                </div>
+
+                <div class="d-grid gap-2">
+                    @if (User.Identity.Name != Model.Owner?.UserName)
+                    {
+                         <a href="https://wa.me/90@(Model.PhoneNumber.Replace(" ", "").TrimStart('0'))" target="_blank" class="btn btn-success btn-lg shadow-sm">
+                            <i class="bi bi-whatsapp"></i> WhatsApp ile İletişime Geç
+                        </a>
+                    }
+
+                     @if (User.IsInRole("Admin"))
+                    {
+                        <button type="button" class="btn btn-outline-danger w-100 mt-2" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                            İlanı Sil (Admin)
+                        </button>
+                    }
+                </div>
+            </div>
+            <a asp-action="Index" class="btn btn-outline-secondary w-100">Geri Dön</a>
+        </div>
+    </div>
+</div>
+
+@if (User.IsInRole("Admin"))
+{
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">İlanı Sil</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label class="form-label">Silme Gerekçesi</label>
+                            <textarea name="reason" class="form-control" rows="3" required placeholder="Lütfen bir gerekçe belirtin..."></textarea>
+                        </div>
+                        <p class="text-danger small mb-0">Bu işlem geri alınamaz ve ilan sahibine bildirim gönderilecektir.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">İptal</button>
+                        <button type="submit" class="btn btn-danger">Evet, Sil</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

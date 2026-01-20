@@ -1,0 +1,48 @@
+@model IEnumerable<universite_platform.Models.Announcement>
+
+@{
+    ViewData["Title"] = "Duyurular";
+}
+
+<div class="row mb-5">
+    <div class="col-md-9">
+        <h1 class="display-4 fw-bold" style="color: var(--primary-color);">📢 Duyurular</h1>
+        <p class="lead text-muted">Kampüs ve topluluktan en güncel haberler</p>
+    </div>
+    <div class="col-md-3 text-end align-self-center">
+        @if (User.IsInRole("Admin"))
+        {
+            <a asp-action="Create" class="btn btn-warning shadow-sm fw-bold">
+                <i class="bi bi-megaphone-fill"></i> Duyuru Yap
+            </a>
+        }
+    </div>
+</div>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-12 mb-4">
+            <div class="glass-card hover-lift p-4 border-start border-5 border-warning">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h3 class="fw-bold mb-0">@item.Title</h3>
+                    <small class="text-muted"><i class="bi bi-calendar-event"></i> @item.CreatedAt.ToString("dd MMMM yyyy")</small>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <span class="badge bg-warning text-dark me-2">Yönetici Duyurusu</span>
+                    <small class="text-muted">@item.Author?.FullName</small>
+                </div>
+                <p class="lead fs-6 mb-0" style="white-space: pre-wrap;">@item.Content</p>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .hover-lift {
+        transition: transform 0.3s ease;
+    }
+    .hover-lift:hover {
+        transform: translateY(-3px);
+    }
+</style>
